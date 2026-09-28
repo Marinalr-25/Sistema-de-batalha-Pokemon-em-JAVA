@@ -18,6 +18,7 @@ O objetivo do projeto é desenvolver um jogo de batalha Pokémon utilizando conc
 - VS Code
 
 ## 📂 Estrutura do projeto 
+```text
 pokemonBatalhaaa/ 
  ├── App.java 
 ├── Pokemon.java 
@@ -30,6 +31,7 @@ pokemonBatalhaaa/
 ├── Pokedex.java 
 ├── Batalha.java 
 └── Cores.java
+```
 
 ## ⚙️ Como executar
 1. Clone o repositório.
