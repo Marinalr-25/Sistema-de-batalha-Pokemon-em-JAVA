@@ -20,7 +20,7 @@ O objetivo do projeto é desenvolver um jogo de batalha Pokémon utilizando conc
 ## 📂 Estrutura do projeto 
 ```text
 pokemonBatalhaaa/ 
- ├── App.java 
+├── App.java 
 ├── Pokemon.java 
 ├── PokemonAgua.java 
 ├── PokemonFogo.java 
