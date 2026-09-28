@@ -1,0 +1,121 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class App{
+    public static void main (String[]args){
+      Cores cor = new Cores();
+      PokemonAgua poseidon= new PokemonAgua("Poseidon",1,135,15, 200);
+      PokemonAgua aquaman= new PokemonAgua("Aquaman",1,110,15, 200);
+      PokemonFogo raiva= new PokemonFogo("Raiva",1,110,25, 210);
+      PokemonAr furacao= new PokemonAr("Furacão",1,100,20, 220);
+      PokemonTerra tarzan= new PokemonTerra("Tarzan",1,100,20, 210);
+      PokemonEletricidade thor= new PokemonEletricidade("Thor",1,100,20, 200);
+
+      //Crie uma lista chamada pokemonSelvagem que vai guardar objetos do tipo Pokemon."
+      ArrayList<Pokemon> pokemonSelvagem = new ArrayList<>();
+      pokemonSelvagem.add(aquaman);
+      pokemonSelvagem.add(raiva);
+      pokemonSelvagem.add(furacao);
+      pokemonSelvagem.add(tarzan);
+      pokemonSelvagem.add(thor);
+
+      Random random5 = new Random();
+      Treinador treinadorVictor = new Treinador("Victor");
+      treinadorVictor.getpokedex().adicionarPokemon(poseidon);
+
+      
+        System.out.println("=".repeat(30));
+        System.out.println(cor.getAmarelo()+ cor.getNegrito() + "=== JOGO DO POKÉMON ===" + cor.getReset());
+        System.out.println("=".repeat(30));
+        Scanner escolha = new Scanner(System.in);
+        System.out.print("\n1 - Capturar\n2 - Pokédex\n3 - Batalhar\n4 - Sair\nSELEIONE UMA DAS OPÇÕES ACIMA: "); 
+        int menu = escolha.nextInt();
+
+        if(menu==1){
+            System.out.println("\nVocê selecionou a opção Capturar");
+            
+        }
+        else if(menu==2){
+            System.out.println("\nVocê selecionou a opção Pokédex");
+            System.out.println(" Pokedex " +  treinadorVictor.getpokedex());
+        }
+        else if(menu==3){
+            System.out.println("\nVocê selecionou a opção Batalhar");
+
+            boolean continuarBatalha = true;
+
+            while(continuarBatalha){
+
+              if (pokemonSelvagem.isEmpty()) {
+              System.out.println("🎉 Você capturou todos os Pokémons!");
+              break;
+              }
+              //pokemon alvo
+              int lenPokemonSelvagem = pokemonSelvagem.size();
+              int oponente = random5.nextInt(lenPokemonSelvagem); //0 - 4
+              Pokemon alvo = pokemonSelvagem.get(oponente);
+              System.out.println("nome oponenete: " + cor.getVermelho() + alvo.getnome() + cor.getReset());
+              System.out.println("tamanho lista " + lenPokemonSelvagem);
+              System.out.println("numero sorteado: " + oponente);
+
+              //escolhe pokemon
+              int lenpokedexVictor = treinadorVictor.getpokedex().qtdPokedex();
+              System.out.println("Escolha seu Pokémon: ");
+              System.out.println("Atualmente você possui: " + lenpokedexVictor + (lenPokemonSelvagem == 1 ? " Pokemon" : " Pokemons"));
+
+              for (int i = 0; i < lenpokedexVictor; i++) {
+                System.out.println(i+1 + " - Pokemon "+ treinadorVictor.getpokedex().getPokemon(i).getnome());
+              }
+              int pokemonEscolhido = escolha.nextInt();
+              Pokemon escolhido = treinadorVictor.getpokedex().getPokemon(pokemonEscolhido - 1);
+
+              //iniciar batalha
+              Batalha batalha = new Batalha(escolhido,  alvo, treinadorVictor);
+              boolean capturou = batalha.batalhar(); 
+
+              //
+              System.out.printf("%sSELEIONE UMA DAS OPÇÕES ABAIXO:%s \n1 - Batalhar Novamente\n2 - Ver Pokédex\n3 - Sair\n ", cor.getAmarelo(), cor.getReset()); 
+              int escolhaAposBatalha = escolha.nextInt();
+
+              System.out.println("opcao da escolha: " + escolhaAposBatalha);
+              if (escolhaAposBatalha == 1){
+                //batalhar novamente
+              } else if (escolhaAposBatalha == 2){
+                System.out.println(" Pokedex " +  treinadorVictor.getpokedex());
+                System.out.println(" Pokemons disponiveis para captuta: " +  pokemonSelvagem);
+
+              }else if (escolhaAposBatalha == 3){
+                continuarBatalha = false;
+                System.out.println("Você saiu do jogo!");
+              }
+              //dano = random.nextInt(11) + 15;    // 10-25
+              //poseidon = 0
+              //raiva = 1
+              // furacao = 2
+              // tarzan = 3
+              // thor = 4
+
+              //Inclusive, você não precisa deixar o número 6 fixo. É melhor fazer o sorteio baseado no tamanho da lista. Assim, se amanhã você colocar 10 Pokémon, seu código continua funcionando automaticamente.
+              
+
+              // treinador -> 1 pokemon - opcao de selecionar os pokemons da pokedex do treinador
+              //pegar o indice da pokedex dele
+              if(capturou){
+                pokemonSelvagem.remove(alvo);  
+                System.out.println(pokemonSelvagem);      
+              }
+            }
+        }
+        else if(menu==4){
+            System.out.println("\nVocê saiu do jogo");
+        }
+        else{
+            System.out.println("\nOpcão inválida");
+        }
+        escolha.close();
+    }
+}
+
+

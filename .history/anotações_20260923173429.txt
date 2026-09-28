@@ -1,0 +1,196 @@
+POKEMON;
+  Quando criar um pokemon do tipo agua, nao precisar colocar o argumento agua.
+  para nao ter a possibilidade de criar um PokemonFogo do tipo agua.
+  entao a classe filha ja tem no super o tipo definido conforme cada elemento
+
+  MENU -> (do while) para se caso perguntar e o usuario colocar um valor diferente de 1 á 4 e o programa encerrar
+
+BATALHA;
+    definir um vencedor OK
+    informar quando for critico OK
+    mostrar o hp dos dois OK
+    opcao de atacar novamente ou capturar (do while) OK
+    HP do Tarzan 10 | HP do Furacão: 10 OK
+    Verificar a vida se esta 0 antes de ir para o próximo round OK 
+    o dano nao ser um valor fixo, e sim aleatorio entre um padrao [20-40] para dar possibilidade do pokemon counterado de ganhar. Então um ataque que normalmente seria 25 poderia virar 50, por exemplo. Tornar a batalha DIFICIL mas nao IMPOSSIVEL OK
+    Caso digite a opção errada, ele pergunta dnv OK
+    SPEED: Definir o qual pokemon começa primeiro. um Pokémon pode ter muito ataque, mas ser lento.OK
+    Capturar pokemon Alvo OK
+    logica de sortear o pokemon alvo OK
+    sortear um pokemon selvagem para a batalha OK
+    criar opção de escolher seu pokemon para lutar OK
+    dar opcoes após capturar, se quer batalhar novamente, ver pokedex ou sair (PARCIALMENTE -> CRIADO O MENU)
+
+    colocar delay nos round e nao aparecer tudo instantaneo
+
+    opcao de batalhar novamente, ver pokedex ou sair(configurar cada um )
+    1 - colocar o loop dnv
+    2 - listar os pokemons da pokedex dele
+    3 - sair do jogo
+
+
+    pokemon iguial nao pode batalhar
+    
+
+
+
+
+
+
+
+
+    retirar o pokemon da lista de selvagens quando capturado
+    quando capturar todos, aparecer msg de que todos ospokemons do mundo foi capturado!
+
+
+
+
+    
+    DEFESA: dano final = dano sorteado - defesa
+    se dano final < 1: dano final = 1
+    MISS: Isso cria mais uma camada de aleatoriedade. (5%)
+    NIVEL: EXEMPLO -> Poseidon
+    Nível 5
+    HP base = 100
+    HP final = 100 + (5 × 5)
+          HP = 125
+    Poseidon
+    Nível 10
+    HP final = 100 + (10 × 5)
+         HP = 150
+
+  ----------------------------------------------
+  ⚡ SPEED
+    ↓
+  quem ataca primeiro?
+    ↓
+  🎲 DANO
+    ↓
+  tipo dá vantagem/desvantagem
+    ↓
+  sorteia o dano dentro da faixa
+    ↓
+  💥 crítico?
+    ↓
+  🛡️ DEFESA
+    ↓
+  dano final
+    ↓
+  ❤️ reduz HP
+  ----------------------------------------------
+  setnivel() → nível precisa ser maior que 0 ⭐
+  sethp() → HP não pode ser negativo ❤️
+  setataquebase() → ataque precisa ser maior que 0 ⚔️
+  settipo() → precisa ser um dos 5 elementos 🌊🔥🌪️🌍⚡
+
+  Raiva atacou com chamas intensas!
+  O dano do Raiva foi de 10
+  Poseidon disparou uma onda gigantesca!
+  Poseidon causou 60 de crítico no oponente Raiva
+  O dano do Poseidon foi de 60
+  HP do Raiva 0 | HP do Poseidon: 70
+  O que você deseja fazer?
+  1 - Atacar
+  2 - Capturar
+
+VERIFICAR;
+  luta de pokemon do msm tipo (VERIFICAR HP) esta ficando igual
+  Classe Menu (talvez)
+
+LISTA 
+  .size() -> mostra o tamanho da lista
+
+  treinador - [poseidon, raiva, tarzan, furacao, thor]
+
+
+
+  treinador[0] = {nome: poseidon, tipo: agua, hp: 100, dano:20, nivel: 1},
+  [
+    {nome: poseidon, tipo: agua, hp: 100, dano:20, nivel: 1},
+    {nome: poseidon, tipo: fogo, hp: 100, dano:20, nivel: 1},
+    {nome: poseidon, tipo: ar, hp: 100, dano:20, nivel: 1},
+    {nome: poseidon, tipo: terra, hp: 100, dano:20, nivel: 1}
+  ]
+
+
+  App
+  │
+  ├── cria Pokémon disponíveis
+  │
+  ├── coloca-os na lista de batalha
+  │
+  └── inicia batalha
+            │
+            ├── jogador escolhe seu Pokémon
+            │
+            └── jogo sorteia um Pokémon da lista
+                          ↓
+                        alvo
+
+    Victor
+  ↓
+  Pokedex
+  ↓
+  quantidade de Pokémon
+  ↓
+  mostrar opções
+  ↓
+  jogador escolhe número
+  ↓
+  converter número → índice
+  ↓
+  pegar objeto Pokémon
+  ↓
+  escolhido
+  ↓
+  sortear Pokémon selvagem
+  ↓
+  alvo
+  ↓
+  Batalha
+
+NO PDF DO PROFESSOR;
+  Você precisa ter dois métodos com o mesmo nome, mas com parâmetros diferentes
+  receberDano(int dano)
+  receberDano(int dano, boolean critico)
+  Override → mesma assinatura, comportamento redefinido na subclasse.
+  Overload → mesmo nome, parâmetros diferentes.
+
+Lista de requisitos (chat e slide)
+  Seu maior checklist agora:
+
+  Já está praticamente pronto:
+
+  ✅ classes
+  ✅ herança
+  ✅ subclasses
+  ✅ extends
+  ✅ super
+  ✅ @Override
+  ✅ ArrayList<Pokemon>
+  ✅ String e primitivos
+  ✅ Scanner
+  ✅ menu
+  ✅ compilação
+
+  Precisamos implementar/revisar:
+
+  🟡 protected
+  🟡 2 setters com validação
+  🟡 for-each
+  🟡 sobrecarga de receberDano
+  🟡 instanceof + downcasting
+  🟡 validação do menu
+  🟡 padronização dos nomes
+
+
+
+
+
+
+
+
+
+
+
+

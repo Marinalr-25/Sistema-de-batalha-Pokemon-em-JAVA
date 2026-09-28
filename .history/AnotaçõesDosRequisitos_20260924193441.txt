@@ -1,0 +1,32 @@
+
+
+
+
+
+FOR-EACH
+  "Para cada Pokémon dessa lista, coloque ele na variável pokemon."
+  for (Pokemon pokemon : treinadorEscolhido.getpokedex().getPokemons()) {
+    System.out.println(pokemon.getnome());
+      }
+
+PROTECED
+  "Esse atributo foi definido como protected porque as subclasses precisam acessar diretamente esse dado para implementar comportamentos específicos."
+
+
+SOBRECARGA: 
+  Dependendo da qtd de parametros, ele pode usar qualquer uma das duas funções AtualizarDano:
+
+
+INSTANCEOF
+
+DOWNCASTING
+  O objeto é PokemonFogo, mas a variável está sendo tratada como Pokemon.
+  Você está dizendo:
+
+  "Eu sei que meuPokemon é, na verdade, um PokemonFogo. Quero tratá-lo como PokemonFogo para poder usar coisas específicas dele."
+  Isso pq preciso usar o ataque que so o pokemonFogo tem tipo chamasFinais, ou pokemonAgua que tem MareDevastadora.
+
+
+
+
+

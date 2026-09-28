@@ -1,0 +1,24 @@
+
+
+
+
+
+FOR-EACH
+  "Para cada Pokémon dessa lista, coloque ele na variável pokemon."
+  for (Pokemon pokemon : treinadorEscolhido.getpokedex().getPokemons()) {
+    System.out.println(pokemon.getnome());
+      }
+
+PROTECED
+  "Esse atributo foi definido como protected porque as subclasses precisam acessar diretamente esse dado para implementar comportamentos específicos."
+
+
+SOBRECARGA: 
+  Dependendo da qtd de parametros, ele pode usar qualquer uma das duas funções AtualizarDano:
+
+
+
+
+
+
+

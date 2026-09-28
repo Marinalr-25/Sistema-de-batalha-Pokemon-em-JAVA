@@ -1,0 +1,41 @@
+public class PokemonAgua extends Pokemon {
+  Cores cor = new Cores();
+    public PokemonAgua(String nome, int nivel, int hp, int ataquebase, int speed ){
+        super(nome,"Agua", nivel,hp,ataquebase, speed);
+    }
+
+    
+    @Override
+    public void atacar(){
+        System.out.printf("%s%s%s disparou uma onda gigantesca!%n", cor.getAzul(), getNome(), cor.getReset());
+    }
+    //instaceof + downcasting
+    public void ataqueMareDevastadora() {
+    System.out.printf(
+        "%s%s finalizou o oponente com Maré Devastadora!%s%n",
+        cor.getVermelho(), getNome(),cor.getReset()
+    );
+  } 
+
+  @Override 
+  public void subirNivel(){
+    super.subirNivel();
+    this.aumentarAtaque(2);
+    this.aumentarHP(5);
+    System.out.printf("%s%s subiu de nível!%s Nível: %d | HP: %d | Ataque Base: %d%n", cor.getVerde(), getNome(), cor.getReset(), nivel, getHp(), getAtaquebase());
+    }
+
+}
+
+//porque brasa é uma referência do tipo Pokemon, e Pokemon não possui ataqueChamas()
+    //     Calcula o dano
+    //       ↓
+    // Dano mata o alvo?
+    //    ↙       ↘
+    //  NÃO       SIM
+    //  ↓          ↓
+    // atacar()   instanceof
+    //             ↓
+    //         downcasting
+    //             ↓
+    //        ataqueChamas()

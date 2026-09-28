@@ -1,0 +1,15 @@
+public class PokemonFogo extends Pokemon {
+  Cores cor = new Cores();
+    public PokemonFogo(String nome, int nivel, int hp, int ataquebase, int speed ){
+        super(nome,"Fogo",nivel,hp,ataquebase, speed);
+    }
+
+    @Override
+    public void atacar(){
+        if (ataquebase >= 20) {
+          System.out.printf("%s%s%s \"lançou uma rajada de fogo devastadora!%n", cor.getAzul(), getnome(), cor.getReset());
+        } else {
+            System.out.printf("%s%s%s atacou com chamas !%n", cor.getAzul(), getnome(), cor.getReset());
+        }
+    }
+}

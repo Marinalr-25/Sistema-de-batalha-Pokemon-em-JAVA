@@ -1,0 +1,9 @@
+
+
+
+
+
+
+
+PROTECED
+  "Esse atributo foi definido como protected porque as subclasses precisam acessar diretamente esse dado para implementar comportamentos específicos."
